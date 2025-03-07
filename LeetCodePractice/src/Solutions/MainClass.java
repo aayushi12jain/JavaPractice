@@ -18,7 +18,12 @@ public class MainClass {
 			integerToRoman.romanToInt(arg);
 		}
 		
-
+		MergeSortedArray mergeSortedArray = new MergeSortedArray();
+		int[] num1 = {1,2,3,0,0,0};
+		int m=3;
+		int[] num2 = {2,5,6};
+		int n=3;
+		mergeSortedArray.merge(num1, m, num2, n);
 	}
 
 }
