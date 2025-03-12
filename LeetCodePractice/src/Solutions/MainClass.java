@@ -4,7 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		IntegerToRoman integerToRoman = new IntegerToRoman();
+		/*IntegerToRoman integerToRoman = new IntegerToRoman();
 		integerToRoman.intToRoman(12);
 		integerToRoman.intToRoman(239);
 		integerToRoman.intToRoman(35);
@@ -23,7 +23,13 @@ public class MainClass {
 		int m=3;
 		int[] num2 = {2,5,6};
 		int n=3;
-		mergeSortedArray.merge(num1, m, num2, n);
+		mergeSortedArray.merge(num1, m, num2, n);*/
+		
+		int[] nums = {3,3};
+		int val = 3;
+		RemoveElement removeElement = new RemoveElement();
+		removeElement.removeElements(nums, val);
 	}
+	
 
 }
