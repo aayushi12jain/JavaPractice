@@ -1,10 +1,17 @@
 package Solutions;
 
+import SolutionsArrays.IntegerToRoman;
+import SolutionsArrays.MajorityElement;
+import SolutionsArrays.MergeSortedArray;
+import SolutionsArrays.RemoveDuplicatesFromNonDecreasingArray;
+import SolutionsArrays.RemoveDuplicatesFromNonDecreasingArray2;
+import SolutionsArrays.RemoveElement;
+
 public class MainClass {
 
 	public static void main(String[] args) {
 
-		/*IntegerToRoman integerToRoman = new IntegerToRoman();
+		IntegerToRoman integerToRoman = new IntegerToRoman();
 		integerToRoman.intToRoman(12);
 		integerToRoman.intToRoman(239);
 		integerToRoman.intToRoman(35);
@@ -35,10 +42,16 @@ public class MainClass {
 		RemoveDuplicatesFromNonDecreasingArray removeElements = new RemoveDuplicatesFromNonDecreasingArray();
 		int[] numsRemoveDuplicates = {0,1,2,2,3,3,4};
 		removeElements.removeDuplicates(numsRemoveDuplicates);
-		*/
+		
 		RemoveDuplicatesFromNonDecreasingArray2 removeElements2 = new RemoveDuplicatesFromNonDecreasingArray2();
 		int[] numsRemoveDuplicates2 = {1,1,1,1,2,2,3};
 		removeElements2.removeDuplicates2(numsRemoveDuplicates2);
+		
+		
+		MajorityElement majorityElement = new MajorityElement();
+		int[] majorityEl  = {3,2,3};
+		
+		majorityElement.majority(majorityEl);
 	}
 	
 

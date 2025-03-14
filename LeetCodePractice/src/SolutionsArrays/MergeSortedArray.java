@@ -1,4 +1,4 @@
-package Solutions;
+package SolutionsArrays;
 
 public class MergeSortedArray {
 
