@@ -23,12 +23,22 @@ public class MainClass {
 		int m=3;
 		int[] num2 = {2,5,6};
 		int n=3;
-		mergeSortedArray.merge(num1, m, num2, n);*/
+		mergeSortedArray.merge(num1, m, num2, n);
 		
 		int[] nums = {3,3};
 		int val = 3;
 		RemoveElement removeElement = new RemoveElement();
 		removeElement.removeElements(nums, val);
+		
+		
+		
+		RemoveDuplicatesFromNonDecreasingArray removeElements = new RemoveDuplicatesFromNonDecreasingArray();
+		int[] numsRemoveDuplicates = {0,1,2,2,3,3,4};
+		removeElements.removeDuplicates(numsRemoveDuplicates);
+		*/
+		RemoveDuplicatesFromNonDecreasingArray2 removeElements2 = new RemoveDuplicatesFromNonDecreasingArray2();
+		int[] numsRemoveDuplicates2 = {1,1,1,1,2,2,3};
+		removeElements2.removeDuplicates2(numsRemoveDuplicates2);
 	}
 	
 
