@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class MajorityElement {
 	
 	public void majority(int[] nums) {
+		Arrays.sort(nums);
 		
 	}
 	public void majority_notBest(int[] nums) {
