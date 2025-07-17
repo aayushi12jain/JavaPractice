@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aayushi Jain | Backend Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f6f8;
+      color: #111827;
+    }
+    header {
+      background-color: #1f2937;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1, h2, h3 {
+      color: #111827;
+    }
+
+    .hero-title {
+      color: white;
+      font-size: 4rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Optional: adds contrast */
+    }
+
+    .education {
+      margin-bottom: 2rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f3f4f6;
+      font-size: 0.9rem;
+    }
+
+    .skills-carousel {
+  overflow: hidden;
+  width: 100%;
+  background: #f4f6f8;
+  padding: 1rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
+}
+
+.skill {
+  flex: 0 0 auto;
+  margin: 0 20px;
+}
+
+.skill img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+#techskills {
+  padding: 2rem;
+  text-align: center;
+}
+
+#skills h2 {
+  color: #2a2e35;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.skill-category {
+  background: #ffffff;
+  border-left: 6px solid #1c1c1c; /* Accent border */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #1c1c1c;
+}
+
+.skill-category ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category ul li {
+  margin-bottom: 0.5rem;
+  color: #37474f;
+  padding: 4px 8px;
+  background-color: #e8eaf6;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Overall Experience Section */
+.experience {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4A4A4A;
+}
+
+.experience-entry {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  gap: 1rem;           /* Creates space between logo and text */
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Section (Job Description) */
+.experience-content {
+  background-color: #ffffff;
+  padding: 15px;
+  border-left: 5px solid #007BFF; /* You can change the color for each box */
+  flex: 1;
+}
+
+.experience-content h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.experience-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.experience-content ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Colors for each section */
+.experience-entry:nth-child(1) .experience-content {
+  border-left-color: #007BFF; /* Blue */
+}
+
+.experience-entry:nth-child(2) .experience-content {
+  border-left-color: #FF5733; /* Orange */
+}
+
+.experience-entry:nth-child(3) .experience-content {
+  border-left-color: #28A745; /* Green */
+}
+
+.experience-entry:nth-child(4) .experience-content {
+  border-left-color: #FFC107; /* Yellow */
+}
+
+.experience-entry:nth-child(5) .experience-content {
+  border-left-color: #6F42C1; /* Purple */
+}
+/* Custom List Style for Portfolio */
+ul.custom-list {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0; /* Remove padding */
+  margin: 0; /* Remove any default margin */
+}
+
+ul.custom-list li {
+  position: relative; /* To position custom bullet */
+  margin-bottom: 12px; /* Space between items */
+  font-size: 1rem;
+  color: #37474f;
+  padding-left: 25px; /* Space for custom bullet */
+  text-align: justify; /* Justify the text inside each list item */
+  padding-right: 20px; /* Optional: adds some padding for a clean look */
+}
+
+ul.custom-list li::before {
+  content: ''; /* Empty content to create a bullet */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the bullet */
+  width: 8px;
+  height: 8px;
+  background-color: #848e99; /* Bullet color */
+  border-radius: 50%; /* Make the bullet round */
+}
+
+.contact {
+  background-color: #f9fafc;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #2a2e35;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item i {
+  font-size: 2rem;
+  color: #6c63ff;
+  margin-right: 1rem;
+  min-width: 2rem;
+}
+
+.contact-item p {
+  font-size: 1rem;
+  color: #37474f;
+  margin: 0;
+}
+
+.contact-item a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  background-color: #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #4f46e5;
+  border-radius: 6px;
+}
+
+
+  
+.hero {
+  background-color: #3c3547;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23eae4f4' fill-opacity='0.25' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 5rem;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #dcdcdc;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #6c63ff;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #4f46e5;
+}
+
+</style>
+
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+</head>
+<body>
+  
+<header class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Aayushi Jain</h1>
+    <p class="hero-subtitle">Backend Developer | Java Expert | AWS Certified</p>
+    <a href="#contact" class="cta-button">Hire Me</a>
+  </div>
+</header>
+
+  <section id="skills">
+    <div class="skills-carousel">
+      <div class="carousel-track">
+        <!-- Duplicate icons for seamless loop -->
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"/>
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="csharp"/>
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+        </div>
+  
+        <!-- Repeat for smooth loop -->
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"/>
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="csharp"/>
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        </div>
+        <div class="skill">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about">
+    <h2>About Me</h2>
+    <p style="text-align: justify;">
+      Hi, I’m <strong>Aayushi Jain</strong> — a passionate and results-driven Full Stack Developer with over 6 years of industry experience building scalable, high-performance applications. I hold a Master’s degree in Management Information Systems from the University of Houston–Clear Lake, where I deepened my expertise in data-driven technologies, cloud computing, and enterprise systems.
+    </p> 
+    <p style="text-align: justify;">
+        Throughout my career, I’ve worked at leading tech companies like Nokia, Mindtree, RxLogix, and Infosys, where I architected and delivered enterprise-grade backend solutions using Java, Kotlin, Spring Boot, and microservices. I’m AWS Certified and experienced in deploying cloud-native applications that are efficient, secure, and cost-effective. I thrive in Agile environments, collaborating closely with cross-functional teams to turn business needs into innovative technical solutions. Whether it's migrating legacy systems, optimizing system performance, or integrating modern cloud technologies, I approach every challenge with curiosity and confidence. 
+      </p>
+        <p style="text-align: justify;">
+          Currently, I’m expanding my skill set into data analytics, cloud engineering, and full-stack development, with hands-on projects in Java, REST APIs, and serverless architectures.
+    </p>
+  </section>
+  <section id="techskills">
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Languages</h3>
+        <ul>
+          <li>Java</li>
+          <li>Kotlin</li>
+          <li>Python</li>
+          <li>C#</li>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Frameworks</h3>
+        <ul>
+          <li>Spring Boot</li>
+          <li>Hibernate</li>
+          <li>Microservices</li>
+          <li>JPA</li>
+          <li>JUnit</li>
+          <li>Mockito</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Cloud & DevOps</h3>
+        <ul>
+          <li>AWS (Certified)</li>
+          <li>Azure</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Jenkins</li>
+          <li>Git</li>
+          <li>Maven</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Databases</h3>
+        <ul>
+          <li>Oracle</li>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>Data Warehouse</li>
+          <li>MongoDB</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Tools & Platforms</h3>
+        <ul>
+          <li>JIRA</li>
+          <li>Confluence</li>
+          <li>SOAPUI</li>
+          <li>FileZilla</li>
+          <li>Visual Studio Code</li>
+          <li>IntelliJ IDEA</li>
+          <li>Eclipse</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Web Services</h3>
+        <ul>
+          <li>REST</li>
+          <li>SOAP</li>
+          <li>GraphQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <section class="experience" id="experience">
+    <h2>Experience</h2>
+    
+    <!-- University of Houston – Clear Lake -->
+    <div class="experience-entry">
+      <div class="experience-content">
+        <h3>Student Associate III – University of Houston–Clear Lake (Jan 2024 – May 2025)</h3>
+        <ul class="custom-list">
+          <li>
+            Delivered hands-on technical support to over 100+ end-users, swiftly resolving complex hardware/software issues across desktops, printers, scanners, and specialized lab equipment—reducing resolution time by 30%.</li>
+          <li> 
+            Diagnosed and troubleshot system malfunctions, contributing to a 20% improvement in system uptime and performance reliability across the university’s computing infrastructure.</li>
+          <li>
+            Executed software deployments, upgrades, and environment configurations across Windows and Linux systems, ensuring seamless compatibility, security compliance, and reduced maintenance overhead.
+          </li>
+          <li>
+            Monitored and managed virtual machines (VMs) used in development and academic environments, proactively identifying performance bottlenecks and security vulnerabilities, resulting in improved system efficiency.
+          </li>
+          <li>
+            Collaborated with cross-functional IT and DevOps teams to automate support workflows and document standard operating procedures, increasing support efficiency and reducing recurring technical issues.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Nokia -->
+    <div class="experience-entry">
+      <div class="experience-content">
+        <h3>Solution Specialist – Nokia (Jul 2022 – Jan 2023)</h3>
+        <ul class="custom-list">
+          <li>Designed and engineered high-performance, scalable Java-based applications by integrating client-customized frameworks (One-NDS/SDL) and provisioning gateways, enhancing system reliability and throughput by 25%.
+          </li>
+          <li>
+            Collaborated closely with the R&D division to align architecture with cutting-edge industry standards, streamline integration processes, and ensure end-to-end system optimization.
+          </li>
+          <li>
+            Developed dynamic, responsive front-end interfaces using JavaScript, Jakarta EE, and JSP, significantly improving UI responsiveness and user engagement for internal and client-facing platforms.
+          </li>
+          <li>
+            Spearheaded the AEP Migration Project, successfully transitioning legacy systems from One-NDS to SDL; implemented streamlined JSON data processing pipelines, reducing data handling latency by 40%.
+          </li>
+          <li>
+            Led full project lifecycle—from requirements gathering and technical documentation to deployment and microservice configuration—delivering customized, client-ready solutions with minimal post-deployment support needs.
+          </li>
+          <li>
+            Ensured robust CI/CD practices and cloud-readiness of services, preparing applications for scalable deployment in production environments.
+            </li>
+          </ul>
+      </div>
+    </div>
+    
+    <!-- Mindtree -->
+    <div class="experience-entry">
+      <div class="experience-content">
+        <h3>Module Lead – Mindtree (Apr 2021 – Jul 2022)</h3>
+        <ul class="custom-list">
+          <li>Led a high-performing Agile team, facilitating daily scrum meetings, sprint planning, and task assignments to ensure timely delivery of multiple critical modules with zero post-deployment defects.
+          </li>
+          <li>
+            Played a key role in architecting and developing microservices-based solutions in collaboration with Nokia’s engineering and product teams, ensuring scalability, resilience, and alignment with evolving business needs.
+          </li>
+          <li>
+            Acted as a primary liaison between engineering and client stakeholders, translating business requirements into innovative, production-ready software solutions that improved operational efficiency.
+          </li>
+          <li>
+            Leveraged One-NDS libraries to build custom workflows and address niche client use cases, boosting system flexibility and reducing development time by 20%.
+          </li>
+          <li>
+            Configured and seamlessly integrated LDAP systems into the project infrastructure, significantly strengthening authentication, authorization, and centralized user management capabilities.
+          </li>
+          <li>
+            Championed Agile development practices and end-to-end SDLC rigor—from requirements and design to testing and deployment—streamlining delivery pipelines and improving team velocity.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- RxLogix -->
+    <div class="experience-entry">
+      <div class="experience-content">
+        <h3>Software Developer – RxLogix (Sep 2020 – Mar 2021)</h3>
+        <ul class="custom-list">
+          <li>Delivered end-to-end full-stack development using Groovy, Grails, and JavaScript, building dynamic, responsive web applications with high performance and maintainability.
+          </li>
+          <li>
+            Integrated Redis and implemented Pub/Sub services to support real-time data communication, improving system responsiveness and reducing latency in event-driven workflows.
+          </li>
+          <li>
+            Contributed to architectural design discussions, influencing core decisions that enhanced the scalability, modularity, and fault tolerance of the system.
+          </li>
+          <li>
+            Engineered and deployed custom Groovy-based plugins to meet unique client requirements, extending platform capabilities and accelerating feature delivery.
+          </li>
+          <li>
+            Collaborated in Agile development cycles, ensuring continuous integration, test-driven development, and alignment with evolving business and technical goals.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Infosys -->
+     
+    <div class="experience-entry">
+      <div class="experience-content">
+        <h3>Senior System Engineer – Infosys (Feb 2017 – Aug 2020)</h3>
+        <ul class="custom-list">
+          <li>Fast-tracked from Intern to Senior System Engineer within 3.5 years, recognized through multiple awards for zero-defect deliveries, on-time execution, and high-impact feature development.
+          </li>
+          <li>
+            Designed and developed scalable, high-performance applications using Java, Spring Boot, and microservices, reducing response times by up to 40% and enabling better fault isolation and maintainability.
+          </li>
+          <li>
+            Built and integrated RESTful and SOAP services with external systems via APIGEE Gateway and IDaaS, streamlining authentication and API orchestration, resulting in a 30% reduction in integration errors.
+          </li>
+          <li>
+            Led the modernization of 10+ portal applications by migrating from IBM WebSphere to an open-source stack (Bootstrap, Angular, Tomcat), achieving a 45% reduction in hosting costs and boosting system load times by 50%.
+          </li>
+          <li>
+            Orchestrated the migration of a mission-critical application from .NET to Java, ensuring 100% feature parity, improving performance by 35%, and completing the project ahead of schedule.
+          </li>
+          <li>
+            Authored and maintained comprehensive JUnit test suites and enforced code quality practices, contributing to a 98% test coverage and helping maintain near-zero post-deployment defects.
+          </li>
+          <li>
+            Optimized backend data processing by developing advanced PL/SQL stored procedures and Oracle functions, reducing data handling times by 60% in high-volume environments.
+          </li>
+          <li>
+            Led code reviews and continuous integration workflows, introducing performance profiling techniques that reduced CPU and memory consumption across microservices by 20–25%.
+          </li>
+          <li>
+            Applied formal training in Java 8, Hibernate, Agile, and full SDLC, actively mentoring junior developers and standardizing coding best practices within the team.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <section class="education" id="education">
+    <h2>Education & Certifications</h2>
+  
+    <!-- Master's in MIS -->
+    <div class="education-item">
+      <h3>Masters Degree in Management Information Systems (MIS)</h3>
+      <p><strong>University of Houston–Clear Lake, USA</strong> (2023 – 2025)<br>
+      <strong>Focus Areas:</strong> Web Applications Design and Development; Database Design, Development, and Administration; Business Analytics Applications Development; Computer Networks Design and Administration; Network Security; Wireless Networking; Windows Administration; Data Warehousing and Mining; Project Management; and Business Applications Programming</p>
+    </div>
+    
+  
+    <!-- B.Tech in Bioinformatics -->
+    <div class="education-item">
+      <h3>Bachelor of Technology in Bioinformatics</h3>
+      <p><strong>Jaypee University of Information Technology (JUIT), India</strong> (2012 – 2016)<br>
+      <strong>Focus Areas:</strong> Bioinformatics Algorithms and Programming; Data Analysis and Visualization; Software Development for Bioinformatics Applications; Database Design and Management; Machine Learning in Bioinformatics; Computational Biology; Systems Biology and Network Analysis; Cloud Computing in Bioinformatics; Data Mining and Bioinformatics.</p>
+    </div>
+    
+  
+    <!-- Certifications -->
+    <div class="certifications">
+      <h3>Certifications</h3>
+      <ul>
+        <li>AWS Certified – AWS Cloud Practitioner (a6a068205e084743a7f010c80e108acd) </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-info">
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <p><a href="mailto:aayushi12jain@gmail.com">aayushi12jain@gmail.com</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-phone-alt"></i>
+      <p><a href="tel:+13465352503">(***) ***-*503</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-location-dot"></i>
+      <p><a href="https://www.google.com/maps/place/San+Ramon,+CA/@37.7581628,-122.0234025,23482m/data=!3m2!1e3!4b1!4m6!3m5!1s0x808fed7cffeaac4f:0xf562eebbf9253ead!8m2!3d37.7643595!4d-121.9539616!16zL20vMHF5eHk?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">San Ramon, CA, USA</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-linkedin"></i>
+      <p><a href="https://www.linkedin.com/in/aayushi12jain" target="_blank">LinkedIn Profile</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-github"></i>
+      <p><a href="https://github.com/aayushi12jain" target="_blank">GitHub Profile</a></p>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-file-download"></i>
+      <p><a href="https://github.com/aayushi12jain/aayushi-portfolio/raw/main/Aayushi_Jain.pdf" download target="_blank">Download Resume</a></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Link to FontAwesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <footer>
+    &copy; 2025 Aayushi Jain. All rights reserved.
+  </footer>
+</body>
+</html>
