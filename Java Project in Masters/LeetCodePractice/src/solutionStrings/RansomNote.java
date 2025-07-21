@@ -1,4 +1,4 @@
-package SolutionStrings;
+package solutionStrings;
 
 import java.util.*;
 import java.util.Map.Entry;
